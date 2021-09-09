@@ -360,8 +360,8 @@ def main():
 		st.write(item_identifier)
 		st.dataframe(df)
 		gbm_prediction=0
-		model_path="D://Data Science//Machine Learning//Projects//Big Mart Sales Prediction//Saved Models//"
-		preprocessing_path="D://Data Science//Machine Learning//Projects//Big Mart Sales Prediction//Saved Preprocessing Pipeline//"
+		model_path="Saved Models//"
+		preprocessing_path="Saved Preprocessing Pipeline//"
 		for i in range(5):
 			file=model_path+'LGBM_fold_'+str(i)+".pkl"
 			with open(file,'rb') as f:
