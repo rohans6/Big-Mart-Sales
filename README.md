@@ -3,7 +3,7 @@
 * Created a tool that predicts sales of a each  product at a big mart outlet to understand the properties of products and outlets which play a key role in increasing sales.
 * Analysed the data, handled the missing values, engineered new features.
 * Used Kfold Cross-Validation Strategy,optimized RandomForestRegressor,LightGbmRegressor using GridSearchCV, prepared a ensemble of both.
-* Build a API using Flask.
+* Build a Web Application using Streamlit.
 # Features:-
 * Item_Identifier :-Unique Product Id.
 * Item_Weight:- Weight of Item.
@@ -22,6 +22,7 @@
 I looked at distributions of variables, hexagonal-binning-plots to understand relationships between different numerical features,pivot-tables to understand relationship between
 categorical-features,Heatmaps.
 Here some plots from the analysis:-
+![hexagonal-binning](Scatterplot.png)
 
 
 
