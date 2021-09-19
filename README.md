@@ -23,6 +23,42 @@ I looked at distributions of variables, hexagonal-binning-plots to understand re
 categorical-features,Heatmaps.
 Here some plots from the analysis:-
 ![hexagonal-binning](Scatterplot.png)
+![Target-Distribution](Item_Outlet_Sales.png)
+![HeatMap](HeatMap.png)
+
+# Feature Engineering
+* Imputed Missing Values with mean value of that price for that item
+e.g ```item_avg_weight=all_data.pivot_table(values="Item_Weight",index="Item_Identifier")
+all_data.loc[all_data['Item_Weight'].isnull(),"Item_Weight"]=all_data.loc[all_data['Item_Weight'].isnull(),"Item_Identifier"].apply(lambda x: item_avg_weight.loc[item_avg_weight.index==x,"Item_Weight"][0])```
+* Engineered new features like: New_Item_Type and Years_Established from Item_Identifier,Outlet_Establishment_year
+# Performance Metrics
+RMSE
+# Model Building
+Scaled Numerical features with RobustScaler to avoid influence of outliers,OnehotEncoding for categorical features as there are no ordinal features  using ColumnTransformer
+  `ColumnTransformer([("Numerical",RobustScaler(),num_cols),("Categorical",OneHotEncoder(handle_unknown="ignore"),cat_cols)])`
+  
+I tried 2 different models and used Kfold Cross Validation:-
+* RandomForestRegressor
+* LightGBMRegressor
+
+
+I made ensemble of RandomForest and LightGBMRegressor using this code
+
+```
+weights=np.arange(0.01,1,0.01)
+all=[]
+min_error=10000
+for w in weights:
+    p=w*rf_val_predictions+(1-w)*lgm_val_predictions
+    e=np.sqrt(mean_squared_error(y,p))
+    if e<min_error:
+        min_error=e
+        best_weight=w 
+```
+# Model Evaluation
+* RandomForestRegressor RMSE:- 1082.37
+* LightGBMRegressor :-1079.0815840228224
+* Ensemble of Both :- 1078.4008095223408
 
 
 
