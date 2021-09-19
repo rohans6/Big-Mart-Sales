@@ -4,7 +4,7 @@
 * Used Kfold Cross-Validation Strategy,optimized RandomForestRegressor,LightGbmRegressor using GridSearchCV, prepared a ensemble of both.
 * Build a API using Flask.
 # Features:-
-*Item_Identifier :-Unique Product Id.
+*Item_Identifier -Unique Product Id.
 *Item_Weight:- Weight of Item.
 *Item_Fat_Content:- Fat Content of Item.
 *Item Visibility:- The % of total display area of all products in a store allocated to the particular product.
