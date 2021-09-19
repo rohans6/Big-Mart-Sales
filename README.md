@@ -28,14 +28,19 @@ Here some plots from the analysis:-
 
 # Feature Engineering
 * Imputed Missing Values with mean value of that price for that item
-e.g ```item_avg_weight=all_data.pivot_table(values="Item_Weight",index="Item_Identifier")
-all_data.loc[all_data['Item_Weight'].isnull(),"Item_Weight"]=all_data.loc[all_data['Item_Weight'].isnull(),"Item_Identifier"].apply(lambda x: item_avg_weight.loc[item_avg_weight.index==x,"Item_Weight"][0])```
+e.g 
+```
+item_avg_weight=all_data.pivot_table(values="Item_Weight",index="Item_Identifier")
+all_data.loc[all_data['Item_Weight'].isnull(),"Item_Weight"]=all_data.loc[all_data['Item_Weight'].isnull(),"Item_Identifier"].apply(lambda x: item_avg_weight.loc[item_avg_weight.index==x,"Item_Weight"][0])
+```
 * Engineered new features like: New_Item_Type and Years_Established from Item_Identifier,Outlet_Establishment_year
 # Performance Metric
 RMSE:-Root Mean Squared Error.
 # Model Building
 Scaled Numerical features with RobustScaler to avoid influence of outliers,OnehotEncoding for categorical features as there are no ordinal features  using ColumnTransformer
-  `ColumnTransformer([("Numerical",RobustScaler(),num_cols),("Categorical",OneHotEncoder(handle_unknown="ignore"),cat_cols)])`
+```
+ColumnTransformer([("Numerical",RobustScaler(),num_cols),("Categorical",OneHotEncoder(handle_unknown="ignore"),cat_cols)])
+```
   
 I tried 2 different models and used Kfold Cross Validation:-
 * RandomForestRegressor
