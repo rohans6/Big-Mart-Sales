@@ -1,3 +1,4 @@
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/rohans6/big-mart-sales/main/Main.py)
 # Big-Mart-Sales:- Project Overview
 * Created a tool that predicts sales of a each  product at a big mart outlet to understand the properties of products and outlets which play a key role in increasing sales.
 * Analysed the data, handled the missing values, engineered new features.
@@ -15,7 +16,13 @@
 * Outlet_Size:-	The size of the store in terms of ground area covered.
 * Outlet_Location_Type:-	The type of city in which the store is located.
 * Outlet_Type:-	Whether the outlet is just a grocery store or some sort of supermarket.
-*Item_Outlet_Sales:-	Sales of the product in the particular store. This is the outcome variable to be predicted.
+* Item_Outlet_Sales:-	Sales of the product in the particular store. This is the outcome variable to be predicted.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/rohans6/big-mart-sales/main/Main.py)
+# EDA:-
+I looked at distributions of variables, hexagonal-binning-plots to understand relationships between different numerical features,pivot-tables to understand relationship between
+categorical-features,Heatmaps.
+Here some plots from the analysis:-
+
+
+
 
